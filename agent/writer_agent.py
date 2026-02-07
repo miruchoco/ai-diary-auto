@@ -3,7 +3,9 @@ import os
 import datetime
 import uuid
 
-DATA_FILE = "c:/miruchoco/aidiary/data/posts.json"
+# Determine the project root directory
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_FILE = os.path.join(BASE_DIR, "data", "posts.json")
 
 def save_entry(entry_data, news_item, thought):
     """
