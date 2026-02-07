@@ -5,7 +5,8 @@ import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
 
-const DATA_FILE_PATH = 'c:/miruchoco/aidiary/data/posts.json';
+import path from 'path';
+const DATA_FILE_PATH = path.join(process.cwd(), '../data/posts.json');
 
 interface Post {
   id: string;
