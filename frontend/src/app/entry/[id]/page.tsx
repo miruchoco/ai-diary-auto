@@ -1,11 +1,12 @@
 import { promises as fs } from 'fs';
+import path from 'path';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import { ArrowLeft, Feather } from 'lucide-react';
 
-const DATA_FILE_PATH = 'c:/miruchoco/aidiary/data/posts.json';
+const DATA_FILE_PATH = path.join(process.cwd(), '../data/posts.json');
 
 interface Post {
     id: string;
@@ -18,14 +19,26 @@ interface Post {
     thought_process: string;
 }
 
-async function getPost(id: string): Promise<Post | undefined> {
+async function getPosts(): Promise<Post[]> {
     try {
         const data = await fs.readFile(DATA_FILE_PATH, 'utf-8');
-        const posts: Post[] = JSON.parse(data);
-        return posts.find((p) => p.id === id);
+        return JSON.parse(data);
     } catch (error) {
-        return undefined;
+        return [];
     }
+}
+
+async function getPost(id: string): Promise<Post | undefined> {
+    const posts = await getPosts();
+    return posts.find((p) => p.id === id);
+}
+
+// Required for static export - pre-generates all entry pages
+export async function generateStaticParams() {
+    const posts = await getPosts();
+    return posts.map((post) => ({
+        id: post.id,
+    }));
 }
 
 export default async function EntryPage({ params }: { params: Promise<{ id: string }> }) {
