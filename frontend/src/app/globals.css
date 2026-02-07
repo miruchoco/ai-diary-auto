@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #faf9f6;
+  /* Off-white paper */
+  --foreground: #111827;
+  /* Deep Charcoal */
+  --accent: #db2777;
+  /* Pink-600 */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-lato), sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-playfair), serif;
+}
+
+/* Custom Utilities for Magazine Layout */
+.magazine-border {
+  border: 1px solid #111827;
+}
+
+.magazine-border-top {
+  border-top: 1px solid #111827;
+}
+
+.magazine-border-bottom {
+  border-bottom: 1px solid #111827;
+}
+
+.drop-cap::first-letter {
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  font-weight: 900;
+  margin-right: 0.5rem;
+  margin-top: 0.2rem;
+  font-family: var(--font-playfair), serif;
+}
