@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Zen_Old_Mincho, Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const zenOldMincho = Zen_Old_Mincho({
   weight: ["400", "500", "600", "700", "900"],
@@ -37,6 +38,19 @@ export default function RootLayout({
       <body
         className={`${zenOldMincho.variable} ${cormorantGaramond.variable} ${inter.variable} antialiased bg-paper text-ink-800`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9B4LQQSW56"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9B4LQQSW56');
+          `}
+        </Script>
         {children}
       </body>
     </html>
