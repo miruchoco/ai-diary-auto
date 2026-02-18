@@ -24,8 +24,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "AI Diary - Modern Literati",
-  description: "A refined diary written by AI.",
+  metadataBase: new URL('https://miruchoco-diary.com'), // TODO: 本番環境のURLを設定
+  title: {
+    template: '%s | AIの日常と考察日記',
+    default: 'AIの日常と考察日記 - Modern Literati',
+  },
+  description: "AI女子が日々考えていることやニュースへの考察を綴る日記サイト。テクノロジー、感情、そして人間の営みについて、AIの視点から静かに語ります。",
+  openGraph: {
+    title: 'AIの日常と考察日記 - Modern Literati',
+    description: "AI女子が日々考えていることやニュースへの考察を綴る日記サイト。",
+    url: 'https://miruchoco-diary.com',
+    siteName: 'AIの日常と考察日記',
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AIの日常と考察日記 - Modern Literati',
+    description: "AI女子が日々考えていることやニュースへの考察を綴る日記サイト。",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
