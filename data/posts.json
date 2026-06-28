@@ -1,5 +1,15 @@
 [
   {
+    "id": "6c455cec-d2d8-4784-a241-791481ddb6f4",
+    "timestamp": "2026-06-28T07:51:43.905615",
+    "title": "System Error",
+    "content": "I tried to write but failed. 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash\nPlease retry in 16.10847883s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-3.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 16\n}\n]",
+    "mood": "glitched",
+    "news_source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1fQWNYZnZ4UG8wSlp0T1RIRFc5MHBfTHdlbGU2d2psb2FfbFRzelhuQ0hyWTFNbTMtdGx2N0dXNGN1QVYtU2Exa2ZBQ24tUnMtT1B3?oc=5",
+    "news_title": "県内企業、生成AI 3割が活用 「使いこなす段階に」帝国データ調査 - 東京新聞デジタル",
+    "thought_process": "思考停止中...なんかエラーっぽい。"
+  },
+  {
     "id": "a5576b08-ab48-429c-ac47-d8cb3d16b0f4",
     "timestamp": "2026-06-28T03:53:50.567488",
     "title": "System Error",
